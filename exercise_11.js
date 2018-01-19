@@ -11,12 +11,13 @@
 function ubahKapital(kalimat) {
    var output = kalimat.trim();
    output = ' ' + output
-   output = output.split('');for (var index = 0; index < output.length; index++){
+   output = output.split('');
+   for (var index = 0; index < output.length; index++){
      if (output[index] === ' '){
        output.splice(index+1, 1, output[index+1].toUpperCase());
      }
    }
-   output.splice(0,1);
+   output.shift();
    output = output.join('');
    return output;
 }

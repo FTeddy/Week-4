@@ -2,7 +2,7 @@
 function angkaPrima(angka) {
   // if angka is prime number, true. else, false.
 
-  // if angka is 1 then true
+  // if angka is 1 then false
   if (angka === 1){
     return false;
   } else {

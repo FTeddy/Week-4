@@ -1,20 +1,42 @@
 // Logic Challenge - Hitung Huruf
 
+//split by words, into an array named 'words'
+// create a var frequency, to count occuring repeats
+// create var frequencyAccumulated, default to 0, to help accumulate occuring repeats from different letters
+// create var frequencyHighest, tp contain highest occuring, accumulated repeats
+// create currentLetter to determine the letter that is currently counting the frequency
+// create var identity, to determine the word where the current highest repeat occured
 
+// loop through words
+  // reset frequency to 0 when moving to next word
+  // reset the accumulation at the start of the next word
+  // pick the word, store as an array of letters, and sort it
+  // from here, loop through the sorted word
+    // if wordSorted[wordIndex] === current letter, increment the frequency by 1
+      // else, not the same letter encountered then:
+        // check if frequency is larger than 1 (has a duplicate), if yes add frequency to frequencyAccumulated
 
+      // if frequency is still 0, then determine current letter as current letter
+      // count the current letter into frequency as the starting value for current letter
 
+  // if frequencyAccumulated is higher than 0 (has duplicates recorded)
+    // if frequencyHighest is smaller than frequencyAccumulated, then set frequencyHighest as frequencyAccumulated
+      // set identity as words[index]
+// after finding frequencyHighest and identity,
+// if frequencyHighest is > 1, return the word identity
+  // else return -1
 
 function hitungHuruf(kata) {
   var words = kata.split(' '); //split by words, into an array named 'words'
   var frequency;  // create a var frequency, to count occuring repeats
-  var frequencyAccumulated = 0; // frequencyAccumulated is default to 0, to help accumulate occuring repeats from different letters
-  var frequencyHighest = 0; // the highest occuring, accumulated repeats
-  var currentLetter = null; // to determine the letter that is currently counting the frequency
+  var frequencyAccumulated = 0; // create var frequencyAccumulated, default to 0, to help accumulate occuring repeats from different letters
+  var frequencyHighest = 0; // create var frequencyHighest, tp contain highest occuring, accumulated repeats
+  var currentLetter = null; // create currentLetter to determine the letter that is currently counting the frequency
   var identity; // create var identity, to determine the word where the current highest repeat occured
 
 
   // console.log(words);
-  for (var index = 0; index < words.length; index++){ // loop through words
+  for (var index = 0; index < words.length; index++){  // loop through words
     // console.log('loop ' + index);
     frequency = 0; // reset frequency to 0 when moving to next word
     frequencyAccumulated = 0; // reset the accumulation at the start of the next word
@@ -46,7 +68,7 @@ function hitungHuruf(kata) {
     }
     // console.log(frequencyAccumulated);
     // console.log(words[index]);
-    
+
     // if frequencyAccumulated is higher than 0 (has duplicates recorded)
     if (frequencyAccumulated > 0){
       // if frequencyHighest is smaller than frequencyAccumulated, then set frequencyHighest as frequencyAccumulated
